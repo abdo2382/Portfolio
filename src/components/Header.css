@@ -1,0 +1,151 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: #1a1a1a;
+  padding: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+/* Logo on the left */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 110px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(97, 218, 251, 0.6);
+  animation: logoGlow 2s infinite alternate;
+}
+
+/* Nav links center */
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.nav-links ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  font-size: 16px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #61dafb;
+  color: #1a1a1a;
+}
+
+.contact-dropdown > a {
+  background: #61dafb;
+  color: #1a1a1a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-dropdown > a:hover {
+  background: #4dc3e0;
+}
+
+/* Dropdown content */
+.contact-dropdown {
+  position: relative;
+}
+
+.contact-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #222;
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  flex-direction: column;
+  padding: 8px 0;
+  z-index: 10;
+}
+
+.contact-dropdown:hover .dropdown-content,
+.contact-dropdown .dropdown-content:hover {
+  display: flex;
+}
+
+.contact-dropdown .dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.contact-dropdown .dropdown-content a:hover {
+  background: #61dafb;
+  color: #1a1a1a;
+}
+
+/* Fix content not hidden under header */
+body {
+  padding-top: 90px;
+}
+
+/* Glow animation for logo */
+@keyframes logoGlow {
+  0% {
+    box-shadow: 0 0 15px rgba(97, 218, 251, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 30px rgba(97, 218, 251, 0.8);
+  }
+}
+
+/* Make social icons circular and glowing */
+.contact-dropdown .dropdown-content a img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%; /* makes it circular */
+  object-fit: cover;
+  box-shadow: 0 0 8px rgba(97, 218, 251, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover animation for icons */
+.contact-dropdown .dropdown-content a:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(97, 218, 251, 0.9);
+}
+
+.contact-dropdown .dropdown-content a {
+  gap: 6px;
+}

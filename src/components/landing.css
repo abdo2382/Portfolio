@@ -1,0 +1,107 @@
+.landing {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 10%;
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #ffffff;
+  min-height: 100vh;
+  gap: 60px;
+}
+
+/* Left side (text) */
+.landing_content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.landing_content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.landing_content h1 span {
+  color: #d4a373; /* soft gold accent */
+}
+
+.landing_content h2 {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #cfcfcf;
+}
+
+.landing_content p {
+  line-height: 1.7;
+  font-size: 1.1rem;
+  color: #dddddd;
+  margin-bottom: 32px;
+}
+
+/* Button */
+.btn {
+  display: inline-block;
+  background: #8b6b4f;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.btn:hover {
+  cursor: pointer;
+  background: #6d523d;
+  transform: translateY(-2px);
+}
+
+/* Right side (avatar) */
+.avatar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(212, 163, 115, 0.4);
+  animation: goldGlow 3s infinite alternate;
+}
+
+/* Subtle glow animation for avatar */
+@keyframes goldGlow {
+  0% {
+    box-shadow: 0 0 25px rgba(212, 163, 115, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 50px rgba(212, 163, 115, 0.6);
+  }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .landing {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 80px 6%;
+  }
+
+  .avatar img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .landing_content h1 {
+    font-size: 2.2rem;
+  }
+
+  .landing_content h2 {
+    font-size: 1.3rem;
+  }
+}
