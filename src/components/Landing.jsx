@@ -1,5 +1,5 @@
 import React from "react";
-import "./Landing.css";
+import "./landing.css";
 import avatar from "../assets/avatar.jpg";
 function Landing() {
   return (
